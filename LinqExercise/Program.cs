@@ -103,6 +103,7 @@ namespace LinqExercise
             };
             employees = employees.Append(testOne).ToList();
             Console.WriteLine(employees[10].FirstName);
+            Console.WriteLine(' ');
             
 
             Console.WriteLine();
