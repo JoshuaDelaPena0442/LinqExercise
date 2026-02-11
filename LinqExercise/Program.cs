@@ -51,7 +51,7 @@ namespace LinqExercise
             }
             Console.WriteLine(' ');
             //TODO: Order numbers in any order (ascending or desc) but only print 4 of them **foreach loop only!**
-            foreach (var number in numbers.Take(4))
+            foreach (var number in numbers.Take(4).OrderBy(x => x))
             {
                 Console.WriteLine(number);
             }
@@ -77,7 +77,7 @@ namespace LinqExercise
             var aboveTwentySix = employees.Where(x => x.Age > 26).OrderBy(x => x.Age).ThenBy(x => x.FirstName);
             foreach (var item in aboveTwentySix)
             {
-                Console.WriteLine($"{item.Age}, {item.FirstName}");
+                Console.WriteLine($"{item.Age}, {item.FullName}");
             }
             Console.WriteLine(' ');
             //TODO: Print the Sum of the employees' YearsOfExperience if their YOE is less than or equal to 10 AND Age is greater than 35.
@@ -102,7 +102,7 @@ namespace LinqExercise
                 
             };
             employees = employees.Append(testOne).ToList();
-            Console.WriteLine(employees[10].FirstName);
+            Console.WriteLine(employees[10].FullName);
             Console.WriteLine(' ');
             
 
